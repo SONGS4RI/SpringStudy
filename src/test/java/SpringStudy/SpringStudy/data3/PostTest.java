@@ -24,7 +24,6 @@ class PostTest {
 
     @Test
     public void test1() {
-//        Post post1 = Post.builder().name("post1").content("post1 content").build();
         commentRepo.deleteAll();
         postRepo.deleteAll();
         Comment comment1 = Comment.builder().content("content 1").build();
