@@ -27,7 +27,7 @@ public class Comment {
     private String content;
 
     @Setter
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "post")
     private Post post;
 

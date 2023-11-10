@@ -2,6 +2,7 @@ package SpringStudy.SpringStudy.data3;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,8 @@ public class Post {
     private String name;
     private String content;
 
-    @OneToMany(mappedBy = "post")
+    @Builder.Default
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<>();
 
     public void updatePost(String name, String content) {
