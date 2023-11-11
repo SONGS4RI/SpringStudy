@@ -40,4 +40,24 @@ class PostTest {
 
         commentRepo.deleteById(comment1.getId());
     }
+
+    @Test
+    public void test2() {
+        commentRepo.deleteAll();
+        postRepo.deleteAll();
+        Comment comment9 = Comment.builder().content("content 9").build();
+        commentRepo.save(comment9);
+        Comment commentChanged = Comment.builder().id(comment9.getId()).content("content 9 changed").build();
+
+        commentRepo.save(commentChanged);
+    }
+
+    @Test
+    public void test3() {
+        commentRepo.deleteAll();
+        postRepo.deleteAll();
+        Comment comment2 = Comment.builder().content("content 2").build();
+        commentRepo.save(comment2);
+
+    }
 }
